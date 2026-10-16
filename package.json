@@ -57,5 +57,12 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuantqse90/chord-agentkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tuantqse90/chord-agentkit/issues"
   }
 }
