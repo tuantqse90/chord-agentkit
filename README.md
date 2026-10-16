@@ -31,7 +31,7 @@ All fields are optional.
 | Option | Env var | Description |
 | --- | --- | --- |
 | `apiKey` | `CHORD_API_KEY` | Sent as `X-API-Key`. Quotes and swaps work without a key at the public limit of 60 requests per minute per IP. |
-| `feeAccount` | `CHORD_FEE_ACCOUNT` | Referrer address credited with the referral share (half) of Chord's protocol fee on swaps built by this provider. |
+| `feeAccount` | `CHORD_FEE_ACCOUNT` | Optional referrer address, sent to the Chord API as `feeAccount` on swaps built by this provider. |
 | `baseUrl` |  | Defaults to `https://api.getchord.xyz/v1`. |
 
 ## Actions
@@ -65,7 +65,7 @@ USDT on Ethereum rejects a new approval while an allowance is still open; the pr
 
 ## Fees
 
-Chord charges a protocol fee on the output token, read on-chain per token (`FeeCollector.feeBpsFor`). At the time of writing the default is 5 bps, with 0 on many stablecoins and majors. The quote reports it as `feeBps` and `feeAmount`, and `expectedAmountOut` is already net of it.
+Chord's fee is read on-chain per output token (`FeeCollector.feeBpsFor`). The quote reports it as `feeBps` and `feeAmount`, and `expectedAmountOut` is already net of it.
 
 ## Development
 
